@@ -14,7 +14,7 @@ const loadingSpinner = document.getElementById("loading-spinner");
 // When the button is clicked
 button.addEventListener("click", function() {
     // Hide the current reminder text and show the loading spinner
-    reminderText.style.display = "none";
+    reminderText.style.display = "none";  // Hide reminder
     loadingSpinner.style.display = "inline-block";  // Show loading spinner
 
     // Simulate fetching new reminder after 1.5 seconds
@@ -23,9 +23,9 @@ button.addEventListener("click", function() {
         reminderText.textContent = randomReminder;
 
         // Hide the loading spinner and display the new reminder
-        loadingSpinner.style.display = "none";
-        reminderText.style.display = "block"; // Show new reminder
-    }, 1500); // Simulated loading delay
+        loadingSpinner.style.display = "none";  // Hide spinner
+        reminderText.style.display = "block";  // Show new reminder
+    }, 1500);  // Simulated loading delay
 });
 
 // Smooth scrolling for the "Reflect on the Lessons" button
