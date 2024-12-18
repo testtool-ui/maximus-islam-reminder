@@ -34,15 +34,14 @@ body {
 }
 
 .maximus-image {
-    width: 100%;
-    max-width: 600px;
+    max-width: 80%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Buttons */
+/* Button */
 .btn {
     background-color: #3e8064;
     color: white;
@@ -62,41 +61,31 @@ body {
     background-color: white;
     padding: 60px 20px;
     text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 8px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 #reminder h2 {
     font-size: 2rem;
     margin-bottom: 30px;
     color: #2d5b44;
-    text-transform: uppercase;
-    font-weight: bold;
 }
 
 #reminder p {
     font-size: 1.2rem;
     line-height: 1.8;
     margin-bottom: 20px;
-    color: #555;
 }
 
-/* Loading Spinner */
-#loading-spinner {
+.spinner {
     font-size: 1.5rem;
     color: #2d5b44;
     font-weight: bold;
-    margin: 20px;
-    display: none;
 }
 
-/* Section Animations */
+/* Section Visibility Animation */
 .section-animate {
     opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.6s ease-out;
+    transform: translateY(30px);
+    transition: opacity 1s, transform 1s;
 }
 
 .section-animate.visible {
@@ -121,4 +110,31 @@ body {
 
 #scroll-to-top-btn:hover {
     background-color: #234f37;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+    }
+
+    #reminder h2 {
+        font-size: 1.5rem;
+    }
+
+    #reminder p {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
 }
