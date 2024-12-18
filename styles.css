@@ -118,3 +118,60 @@ footer {
     padding: 20px;
     text-align: center;
     }
+
+/* Button Hover Effect */
+.btn:hover {
+    background-color: #2d5b44;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    #hero h1 {
+        font-size: 1.8rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 12px 25px;
+    }
+
+    #reminder h2,
+    #quranic-reflection h2,
+    #prophet-example h2 {
+        font-size: 1.5rem;
+    }
+
+    #reminder p,
+    #quranic-reflection p,
+    #prophet-example p {
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-size: 1rem;
+    }
+
+    #quranic-reflection .verse {
+        padding: 15px;
+    }
+
+    #prophet-example p {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Hover Effect */
+footer p:hover {
+    color: #ffcc00; /* Highlight color on hover */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    }
