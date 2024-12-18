@@ -1,20 +1,23 @@
-// Smooth scrolling for buttons
-document.querySelector('.btn').addEventListener('click', function(e) {
+// Smooth Scroll for Button
+document.querySelector('.btn').addEventListener('click', (e) => {
     e.preventDefault();
     document.querySelector('#reminder').scrollIntoView({ behavior: 'smooth' });
 });
 
-// Loading indicator for the reminder button
-const button = document.getElementById('new-reminder-btn');
-button.addEventListener('click', () => {
-    button.innerHTML = '<span class="loading">⏳ Loading...</span>';
-    setTimeout(() => {
-        button.innerHTML = 'Get a New Reminder';
-    }, 1000); // Simulate a delay
+// Dynamic Daily Reminder
+const reminders = [
+    "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
+    "Even when things seem impossible, remember Allah has a plan for you.",
+    "The struggle is part of the journey. Trust in Allah’s mercy.",
+    "Every hardship is a test. Use it to grow closer to Allah.",
+];
+
+document.getElementById("new-reminder-btn").addEventListener("click", () => {
+    const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
+    document.getElementById("reminder-text").textContent = randomReminder;
 });
 
-// Section visibility on scroll
-const sections = document.querySelectorAll('section');
+// Intersection Observer for Animations
 const observer = new IntersectionObserver(
     (entries) => {
         entries.forEach((entry) => {
@@ -26,6 +29,19 @@ const observer = new IntersectionObserver(
     { threshold: 0.1 }
 );
 
-sections.forEach((section) => {
-    observer.observe(section);
+document.querySelectorAll('section').forEach((section) => observer.observe(section));
+
+// Scroll-to-Top Button
+const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 200) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+});
+
+scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
 });
