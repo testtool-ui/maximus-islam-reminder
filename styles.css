@@ -71,30 +71,28 @@ body {
     display: block; /* Default state - visible */
 }
 
-/* Quranic Reflection Section */
-#quranic-reflection {
-    background-color: #f8f8f8;
+/* Reminder Section */
+#reminder {
+    background-color: white;
     padding: 60px 20px;
     text-align: center;
+    position: relative;
 }
 
-#quranic-reflection h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #2d5b44;
+/* Loading Text in Reminder Section */
+#loading-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #2d5b44; /* Match site theme */
+    display: none; /* Hide loading text by default */
 }
 
-#quranic-reflection .verse {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-#quranic-reflection em {
-    font-style: normal;
-    font-weight: bold;
+/* Reminder Text in Reminder Section */
+#reminder-text {
+    display: block; /* Default state - visible */
 }
 
 /* Prophet Muhammad's Example Section */
