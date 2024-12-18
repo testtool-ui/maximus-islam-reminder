@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    scroll-behavior: smooth;  /* Enable smooth scrolling globally */
 }
 
 h1, h2 {
@@ -35,10 +36,12 @@ h1, h2 {
 
 #hero h1 {
     font-size: 3rem;
+    animation: fadeIn 2s ease-out;
 }
 
 #hero p {
     font-size: 1.5rem;
+    animation: fadeIn 2s ease-out 0.5s;
 }
 
 /* Reminder Section */
@@ -46,6 +49,7 @@ h1, h2 {
     background-color: #ffffff;
     padding: 40px 20px;
     text-align: center;
+    animation: fadeIn 2s ease-out 1s;
 }
 
 #reminder h2 {
@@ -78,6 +82,7 @@ h1, h2 {
 #quranic-reflection {
     background-color: #fafafa;
     padding: 40px 20px;
+    animation: fadeIn 2s ease-out 1.5s;
 }
 
 .verse {
@@ -115,3 +120,13 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* Keyframe Animation for Fade In */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+        }
