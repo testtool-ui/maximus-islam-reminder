@@ -6,31 +6,7 @@ document.querySelector('.btn').addEventListener('click', function(e) {
     });
 });
 
-// Scroll-to-Top Button functionality
-const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
-
-window.onscroll = function() {
-    // Scroll to Top button visibility
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        scrollToTopBtn.style.display = "block";
-    } else {
-        scrollToTopBtn.style.display = "none";
-    }
-
-    // Animate section visibility on scroll
-    const sections = document.querySelectorAll('.section-animate');
-    sections.forEach(section => {
-        const sectionPosition = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        
-        // When section is in view, add the 'visible' class to animate
-        if (sectionPosition < windowHeight * 0.8) {
-            section.classList.add('visible');
-        }
-    });
-};
-
-// JavaScript for Random Reminder and Loading Spinner
+// Random Reminder Logic with Loading Indicator
 const reminders = [
     "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
     "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
@@ -44,15 +20,50 @@ const button = document.getElementById("new-reminder-btn");
 const loadingSpinner = document.getElementById("loading-spinner");
 
 button.addEventListener("click", function() {
-    // Show the loading spinner
+    // Show loading spinner while fetching new reminder
     loadingSpinner.style.display = "inline-block";
 
-    // Simulate loading time (you can adjust this as needed)
+    // Simulate fetching new reminder
     setTimeout(function() {
         const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
         reminderText.textContent = randomReminder;
-
-        // Hide the loading spinner after the reminder is updated
         loadingSpinner.style.display = "none";
-    }, 1000); // You can adjust the timeout duration as needed (currently set to 1 second)
+    }, 1500); // Simulated fetch delay
+});
+
+// Section Visibility on Scroll
+const sections = document.querySelectorAll('.section-animate');
+
+const sectionVisibilityOnScroll = () => {
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight * 0.8) {
+            section.style.opacity = 1;
+            section.style.transform = "translateY(0)";
+        }
+    });
+};
+
+// Run on page load and scroll
+window.addEventListener('load', sectionVisibilityOnScroll);
+window.addEventListener('scroll', sectionVisibilityOnScroll);
+
+// Scroll to Top Button Logic
+const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+scrollToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Page Load Indicator (Hide after content loads)
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("page-loader").style.display = "none";
 });
