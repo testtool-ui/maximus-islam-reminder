@@ -13,19 +13,19 @@ const button = document.getElementById("new-reminder-btn");
 
 // Event listener for button click
 button.addEventListener("click", function() {
-    // Hide reminder text and show loading text
+    // Hide the current reminder and show loading text
     reminderText.style.display = 'none';
-    loadingText.style.display = 'block';
+    loadingText.style.display = 'block';  // Show loading text
 
-    // Simulate loading for 2 seconds (replace with actual API call or logic)
+    // Simulate a delay of 2 seconds (to mimic fetching a new reminder)
     setTimeout(function() {
         const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
-        reminderText.textContent = randomReminder;
+        reminderText.textContent = randomReminder; // Set the new reminder text
         
-        // Hide loading text and show reminder text
-        loadingText.style.display = 'none';
+        // Hide loading text and show new reminder text
+        loadingText.style.display = 'none'; 
         reminderText.style.display = 'block';
-    }, 2000); // Simulate a 2-second delay for loading
+    }, 2000); // Simulated 2-second delay
 });
 
 // Smooth scrolling for the "Reflect on the Lessons" button
