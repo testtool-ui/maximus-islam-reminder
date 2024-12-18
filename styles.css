@@ -52,7 +52,7 @@ body {
     background-color: white;
     padding: 60px 20px;
     text-align: center;
-    position: relative; /* Allows positioning of the loading spinner inside */
+    position: relative; /* To position the spinner inside */
 }
 
 /* Loading Spinner in Reminder Section */
@@ -62,7 +62,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2rem;
-    color: #2d5b44; /* Match the theme */
+    color: #2d5b44; /* Match site theme */
     display: none; /* Hide spinner by default */
 }
 
