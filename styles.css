@@ -33,15 +33,18 @@ body {
     font-style: italic;
 }
 
-.maximus-image {
-    max-width: 80%;
+.hero-image {
+    width: 100%;
+    max-width: 1200px;
     height: auto;
+    border-radius: 10px;
     margin-top: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 2s;
 }
 
-/* Button */
+/* Button Styles */
 .btn {
     background-color: #3e8064;
     color: white;
@@ -54,43 +57,69 @@ body {
 
 .btn:hover {
     background-color: #2d5b44;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Reminder Section */
+/* Page Loader Styles */
+.page-loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensures it appears above all content */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #2d5b44;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.5s linear infinite;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Inspirational Reminder Section */
 #reminder {
     background-color: white;
     padding: 60px 20px;
     text-align: center;
+    position: relative; /* To position loading spinner inside */
 }
 
-#reminder h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #2d5b44;
-}
-
-#reminder p {
+/* Loading Spinner in Reminder Section */
+#loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    color: #333;
 }
 
-.spinner {
-    font-size: 1.5rem;
-    color: #2d5b44;
-    font-weight: bold;
-}
-
-/* Section Visibility Animation */
+/* Scroll Animations */
 .section-animate {
     opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1s, transform 1s;
+    transform: translateY(20px);
+    animation: fadeUp 1s forwards;
 }
 
-.section-animate.visible {
-    opacity: 1;
-    transform: translateY(0);
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Scroll-to-Top Button Styles */
@@ -106,14 +135,38 @@ body {
     cursor: pointer;
     font-size: 1rem;
     transition: opacity 0.3s;
+    display: none; /* Hidden by default */
 }
 
 #scroll-to-top-btn:hover {
     background-color: #234f37;
 }
 
+/* Testimonial Section */
+#testimonials {
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#testimonials .testimonial {
+    margin: 20px;
+    padding: 20px;
+    border-left: 5px solid #2d5b44;
+    font-style: italic;
+}
+
+#testimonials blockquote {
+    font-size: 1.2rem;
+    color: #333;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
     #hero h1 {
         font-size: 1.8rem;
     }
@@ -126,15 +179,47 @@ body {
         padding: 12px 25px;
     }
 
-    #reminder h2 {
+    #reminder h2,
+    #quranic-reflection h2,
+    #prophet-example h2 {
         font-size: 1.5rem;
     }
 
-    #reminder p {
+    #reminder p,
+    #quranic-reflection p,
+    #prophet-example p {
         font-size: 1rem;
     }
 
     footer p {
         font-size: 1rem;
     }
+
+    #quranic-reflection .verse {
+        padding: 15px;
+    }
+
+    #prophet-example p {
+        font-size: 1rem;
+    }
+}
+
+/* Hero Section Fade-in Animation */
+#hero h1, #hero p {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer Hover Effect */
+footer p:hover {
+    color: #ffcc00; /* Highlight color on hover */
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
