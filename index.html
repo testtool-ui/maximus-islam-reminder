@@ -80,42 +80,6 @@
     <p>&copy; 2024 Maximus-Islam Reminder. All rights reserved.</p>
 </footer>
 
-<!-- JavaScript for Random Reminder -->
-<script>
-    const reminders = [
-        "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
-        "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
-        "The struggle is part of the journey. Trust in your ability and in Allah’s mercy.",
-        "Every hardship is a test, and every test is an opportunity to grow closer to Allah.",
-        "Maximus never gave up in battle, and we must never give up in our fight for faith and justice."
-    ];
-
-    const reminderText = document.getElementById("reminder-text");
-    const button = document.getElementById("new-reminder-btn");
-
-    button.addEventListener("click", function() {
-        const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
-        reminderText.textContent = randomReminder;
-    });
-</script>
-
-<!-- Scroll to Top Button Script -->
-<script>
-    const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
-
-    window.onscroll = function() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            scrollToTopBtn.style.display = "block";
-        } else {
-            scrollToTopBtn.style.display = "none";
-        }
-    };
-
-    scrollToTopBtn.addEventListener("click", function() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-</script>
-
 <script>
     const observer = new IntersectionObserver(
         (entries) => {
