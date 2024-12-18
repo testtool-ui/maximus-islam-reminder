@@ -6,7 +6,7 @@ document.querySelector('.btn').addEventListener('click', function(e) {
     });
 });
 
-// Random Reminder Logic with Loading Indicator
+// Random Reminder Logic with Loading Icon
 const reminders = [
     "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
     "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
@@ -19,15 +19,20 @@ const reminderText = document.getElementById("reminder-text");
 const button = document.getElementById("new-reminder-btn");
 const loadingSpinner = document.getElementById("loading-spinner");
 
+// When the button is clicked
 button.addEventListener("click", function() {
-    // Show loading spinner while fetching new reminder
+    // Hide the current reminder and show the loading spinner
+    reminderText.style.display = "none";
     loadingSpinner.style.display = "inline-block";
 
     // Simulate fetching new reminder
     setTimeout(function() {
         const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
         reminderText.textContent = randomReminder;
+
+        // Hide the loading spinner and display the new reminder
         loadingSpinner.style.display = "none";
+        reminderText.style.display = "block";
     }, 1500); // Simulated fetch delay
 });
 
