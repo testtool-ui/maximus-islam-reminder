@@ -65,3 +65,57 @@ body {
     line-height: 1.8;
     margin-bottom: 20px;
 }
+
+/* Quranic Reflection Section */
+#quranic-reflection {
+    background-color: #f8f8f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#quranic-reflection h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2d5b44;
+}
+
+#quranic-reflection .verse {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#quranic-reflection em {
+    font-style: normal;
+    font-weight: bold;
+}
+
+/* Prophet Muhammad's Example Section */
+#prophet-example {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+#prophet-example h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2d5b44;
+}
+
+#prophet-example p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #2d5b44;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
