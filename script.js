@@ -6,16 +6,6 @@ document.querySelector('.btn').addEventListener('click', function(e) {
     });
 });
 
-// Smooth scrolling for navigation links (in case you have anchors or more navigation)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 // Array of reminders
 const reminders = [
     "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
