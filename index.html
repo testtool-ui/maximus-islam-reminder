@@ -15,12 +15,15 @@
         <a href="#reminder" class="btn">Reflect on the Lessons</a>
     </section>
 
-    <!-- Reminder Section -->
-<section id="reminder">
-    <h2>Daily Reminder</h2>
-    <p id="reminder-text">Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.</p>
+    <section id="reminder">
+    <h2>Inspirational Reminder</h2>
+    <p id="reminder-text">Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.</p>
+    
+    <!-- Loading Spinner -->
+    <div id="loading-spinner"></div>
+    
     <button class="btn" id="new-reminder-btn">Get a New Reminder</button>
-</section>
+    </section>
 
     <!-- Quranic Reflection Section - Expanded -->
 <section id="quranic-reflection">
@@ -78,25 +81,6 @@
 <footer>
     <p>&copy; 2024 Maximus-Islam Reminder. All rights reserved.</p>
 </footer>
-
-<!-- JavaScript for Random Reminder -->
-<script>
-    const reminders = [
-        "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
-        "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
-        "The struggle is part of the journey. Trust in your ability and in Allah’s mercy.",
-        "Every hardship is a test, and every test is an opportunity to grow closer to Allah.",
-        "Maximus never gave up in battle, and we must never give up in our fight for faith and justice."
-    ];
-
-    const reminderText = document.getElementById("reminder-text");
-    const button = document.getElementById("new-reminder-btn");
-
-    button.addEventListener("click", function() {
-        const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
-        reminderText.textContent = randomReminder;
-    });
-</script>
 
 <!-- Scroll to Top Button Script -->
 <script>
