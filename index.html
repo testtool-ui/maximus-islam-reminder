@@ -10,111 +10,48 @@
 
     <!-- Hero Section -->
     <section id="hero">
+        <img src="images/maximus-image.jpg" alt="A symbolic representation of resilience and faith" class="hero-image">
         <h1>What we do in life echoes in eternity.</h1>
         <p>"But what we do for the pleasure of Allah echoes forever."</p>
         <a href="#reminder" class="btn">Reflect on the Lessons</a>
     </section>
 
     <!-- Reminder Section -->
-<section id="reminder">
-    <h2>Daily Reminder</h2>
-    <p id="reminder-text">Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.</p>
-    <button class="btn" id="new-reminder-btn">Get a New Reminder</button>
-</section>
-
-    <!-- Quranic Reflection Section - Expanded -->
-<section id="quranic-reflection">
-    <h2>Quranic Reflections</h2>
-    <div class="verse">
-        <p><em>"And be patient, for indeed, Allah is with those who are patient." (Surah Al-Anfal, 8:46)</em></p>
-        <p>This verse teaches us the importance of patience (Sabr), a quality Maximus embodies in times of hardship.</p>
-    </div>
-    <div class="verse">
-        <p><em>"Do not kill yourselves. Indeed, Allah is ever Merciful to you." (Surah An-Nisa, 4:29)</em></p>
-        <p>Maximus’ resilience in the face of despair reflects a mindset of endurance, echoing Allah’s command to never give up hope.</p>
-    </div>
-    <div class="verse">
-        <p><em>"So be patient. Indeed, the promise of Allah is truth." (Surah Ar-Rum, 30:60)</em></p>
-        <p>Patience (Sabr) is not only a virtue but also a promise from Allah, which we must believe in, just as Maximus believed in his ultimate victory.</p>
-    </div>
-    <div class="verse">
-        <p><em>"Do not grieve; indeed Allah is with us." (Surah At-Tawbah, 9:40)</em></p>
-        <p>Maximus’ journey mirrors the struggle of many Muslims who face hardship and loss, but through faith, we remember that Allah is always with us.</p>
-    </div>
-    <div class="verse">
-        <p><em>"And whoever fears Allah... He will make a way for him to get out (from every difficulty)." (Surah At-Talaq, 65:2)</em></p>
-        <p>Maximus demonstrated great fearlessness and resolve; in the same way, the Quran encourages us to fear Allah, and He will guide us through challenges.</p>
-    </div>
-</section>
-
-<!-- Testimonial Section -->
-<section id="testimonials">
-    <h2>Reflections from the Community</h2>
-    <div class="testimonial">
-        <blockquote>
-            <p>"Maximus’ resilience, despite everything, reminds me of the strength we should show in our faith. His struggle is my struggle." — A Believer</p>
-        </blockquote>
-    </div>
-    <div class="testimonial">
-        <blockquote>
-            <p>"The fight for justice is not just physical, but spiritual. We must always stand up for what’s right, even if the world is against us." — A Seeker of Truth</p>
-        </blockquote>
-    </div>
-</section>
-
-    <!-- Prophet Muhammad's Example Section -->
-    <section id="prophet-example">
-        <h2>Prophet Muhammad's Example</h2>
-        <p>The Prophet (ﷺ) showed incredible courage in battle, not for fame, but to protect the truth and establish justice. He exemplified the virtues of Maximus, showing resilience in the face of hardship.</p>
-        <p>He lived a life of submission (Islam), patience (Sabr), and integrity, which is a source of inspiration for Muslims facing adversity today.</p>
+    <section id="reminder">
+        <h2>Daily Reminder</h2>
+        <p id="reminder-text">Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.</p>
+        <button class="btn" id="new-reminder-btn">Get a New Reminder</button>
     </section>
-    
+
+    <!-- Quranic Reflection Section -->
+    <section id="quranic-reflection">
+        <h2>Quranic Reflections</h2>
+        <div class="verse">
+            <p><em>"And be patient, for indeed, Allah is with those who are patient." (Surah Al-Anfal, 8:46)</em></p>
+            <p>This verse teaches us the importance of patience (Sabr), a quality Maximus embodies in times of hardship.</p>
+        </div>
+        <!-- Additional verses here -->
+    </section>
+
+    <!-- Testimonial Section -->
+    <section id="testimonials">
+        <h2>Reflections from the Community</h2>
+        <div class="testimonial">
+            <blockquote>
+                <p>"Maximus’ resilience, despite everything, reminds me of the strength we should show in our faith. His struggle is my struggle." — A Believer</p>
+            </blockquote>
+        </div>
+    </section>
+
     <!-- Scroll to Top Button -->
-<button id="scroll-to-top-btn" class="btn" style="display:none;">↑ Back to Top</button>
-
-
+    <button id="scroll-to-top-btn" class="btn" style="display:none;">↑ Back to Top</button>
 
     <!-- Footer Section -->
-<footer>
-    <p>&copy; 2024 Maximus-Islam Reminder. All rights reserved.</p>
-</footer>
+    <footer>
+        <p>&copy; 2024 Maximus-Islam Reminder. All rights reserved.</p>
+    </footer>
 
-<!-- JavaScript for Random Reminder -->
-<script>
-    const reminders = [
-        "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
-        "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
-        "The struggle is part of the journey. Trust in your ability and in Allah’s mercy.",
-        "Every hardship is a test, and every test is an opportunity to grow closer to Allah.",
-        "Maximus never gave up in battle, and we must never give up in our fight for faith and justice."
-    ];
-
-    const reminderText = document.getElementById("reminder-text");
-    const button = document.getElementById("new-reminder-btn");
-
-    button.addEventListener("click", function() {
-        const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
-        reminderText.textContent = randomReminder;
-    });
-</script>
-
-<!-- Scroll to Top Button Script -->
-<script>
-    const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
-
-    window.onscroll = function() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            scrollToTopBtn.style.display = "block";
-        } else {
-            scrollToTopBtn.style.display = "none";
-        }
-    };
-
-    scrollToTopBtn.addEventListener("click", function() {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-</script>
-
+    <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
