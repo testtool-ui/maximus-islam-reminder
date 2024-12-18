@@ -90,7 +90,7 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-/* Inspirational Reminder Section */
+/* Reminder Section */
 #reminder {
     background-color: white;
     padding: 60px 20px;
@@ -104,22 +104,26 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 2rem;
+    color: #2d5b44; /* Match the site's theme */
+    display: none; /* Hide spinner by default */
 }
 
-/* Scroll Animations */
-.section-animate {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s forwards;
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+/* Spinner Style */
+#loading-spinner::before {
+    content: "";
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #2d5b44; /* Match the site theme */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1.5s linear infinite;
 }
 
 /* Scroll-to-Top Button Styles */
