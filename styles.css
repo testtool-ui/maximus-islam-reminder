@@ -52,38 +52,21 @@ body {
     background-color: white;
     padding: 60px 20px;
     text-align: center;
-    position: relative; /* To position the spinner inside */
+    position: relative;
 }
 
-/* Loading Spinner in Reminder Section */
-#loading-spinner {
+/* Loading Text in Reminder Section */
+#loading-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #2d5b44; /* Match site theme */
-    display: none; /* Hide spinner by default */
+    display: none; /* Hide loading text by default */
 }
 
-/* Spinner Animation */
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Spinner Style */
-#loading-spinner::before {
-    content: "";
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #2d5b44; /* Match site theme */
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 1.5s linear infinite;
-}
-
-/* Hide reminder text when spinner is active */
+/* Hide reminder text when loading text is active */
 #reminder-text {
     display: block; /* Default state - visible */
 }
