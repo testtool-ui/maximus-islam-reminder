@@ -1,177 +1,117 @@
-/* General Body Styles */
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #f1f1f1;
-    color: #333;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #2d5b44;
 }
 
 /* Hero Section */
 #hero {
-    background-color: #2d5b44;
-    color: white;
-    padding: 100px 20px;
+    position: relative;
     text-align: center;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    background-color: #222;
+    color: white;
+    padding: 50px 20px;
+}
+
+#hero img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+#hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 #hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    font-weight: bold;
+    font-size: 3rem;
 }
 
 #hero p {
-    font-size: 1.2rem;
-    margin-bottom: 40px;
-    font-style: italic;
-}
-
-.btn {
-    background-color: #3e8064;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1.1rem;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #2d5b44;
+    font-size: 1.5rem;
 }
 
 /* Reminder Section */
 #reminder {
-    background-color: white;
-    padding: 60px 20px;
+    background-color: #ffffff;
+    padding: 40px 20px;
     text-align: center;
 }
 
 #reminder h2 {
     font-size: 2rem;
-    margin-bottom: 30px;
-    color: #2d5b44;
+    margin-bottom: 20px;
 }
 
 #reminder p {
     font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+    color: #333;
+}
+
+.btn {
+    background-color: #2d5b44;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #234f37;
 }
 
 /* Quranic Reflection Section */
 #quranic-reflection {
-    background-color: #f8f8f8;
-    padding: 60px 20px;
-    text-align: center;
+    background-color: #fafafa;
+    padding: 40px 20px;
 }
 
-#quranic-reflection h2 {
-    font-size: 2rem;
-    margin-bottom: 30px;
-    color: #2d5b44;
-}
-
-#quranic-reflection .verse {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
+.verse {
     margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#quranic-reflection em {
-    font-style: normal;
-    font-weight: bold;
-}
-
-/* Prophet Muhammad's Example Section */
-#prophet-example {
-    background-color: #ffffff;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-#prophet-example h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #2d5b44;
-}
-
-#prophet-example p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+.verse p {
+    font-size: 1.1rem;
+    color: #555;
 }
 
 /* Footer Section */
 footer {
     background-color: #2d5b44;
     color: white;
-    padding: 20px;
     text-align: center;
-    }
-
-/* Button Hover Effect */
-.btn:hover {
-    background-color: #2d5b44;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
 }
 
-/* Mobile Responsiveness */
+/* Responsive Design */
 @media (max-width: 768px) {
-    body {
-        padding: 0;
-    }
-
     #hero h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
 
     #hero p {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
 
     .btn {
-        padding: 12px 25px;
+        padding: 10px 20px;
     }
 
-    #reminder h2,
-    #quranic-reflection h2,
-    #prophet-example h2 {
-        font-size: 1.5rem;
-    }
-
-    #reminder p,
-    #quranic-reflection p,
-    #prophet-example p {
-        font-size: 1rem;
-    }
-
-    footer p {
-        font-size: 1rem;
-    }
-
-    #quranic-reflection .verse {
-        padding: 15px;
-    }
-
-    #prophet-example p {
+    #reminder p, #quranic-reflection p {
         font-size: 1rem;
     }
 }
-
-/* Footer Hover Effect */
-footer p:hover {
-    color: #ffcc00; /* Highlight color on hover */
-    cursor: pointer;
-    transition: color 0.3s ease;
-    }
