@@ -66,7 +66,7 @@ body {
     display: none; /* Hide loading text by default */
 }
 
-/* Hide reminder text when loading text is active */
+/* Reminder Text in Reminder Section */
 #reminder-text {
     display: block; /* Default state - visible */
 }
