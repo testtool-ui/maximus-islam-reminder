@@ -6,22 +6,31 @@ document.querySelector('.btn').addEventListener('click', function(e) {
     });
 });
 
-// Smooth scrolling for the scroll-to-top button
+// Scroll-to-Top Button functionality
 const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
 
 window.onscroll = function() {
+    // Scroll to Top button visibility
     if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
         scrollToTopBtn.style.display = "block";
     } else {
         scrollToTopBtn.style.display = "none";
     }
+
+    // Animate section visibility on scroll
+    const sections = document.querySelectorAll('.section-animate');
+    sections.forEach(section => {
+        const sectionPosition = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        // When section is in view, add the 'visible' class to animate
+        if (sectionPosition < windowHeight * 0.8) {
+            section.classList.add('visible');
+        }
+    });
 };
 
-scrollToTopBtn.addEventListener("click", function() {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// Random Reminder Logic
+// JavaScript for Random Reminder and Loading Spinner
 const reminders = [
     "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
     "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
@@ -32,25 +41,18 @@ const reminders = [
 
 const reminderText = document.getElementById("reminder-text");
 const button = document.getElementById("new-reminder-btn");
+const loadingSpinner = document.getElementById("loading-spinner");
 
-button.addEventListener("click", function() {
-    const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
-    reminderText.textContent = randomReminder;
+button.addEventListener("click", function () {
+    // Show the loading spinner
+    loadingSpinner.style.display = "block";
+
+    // Simulate a delay to fetch the reminder (for demonstration)
+    setTimeout(function () {
+        const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
+        reminderText.textContent = randomReminder;
+
+        // Hide the loading spinner after the reminder is updated
+        loadingSpinner.style.display = "none";
+    }, 1000);  // Simulating a 1-second fetch delay
 });
-
-// Section Visibility on Scroll
-const sections = document.querySelectorAll('.section-animate');
-
-const sectionVisibilityOnScroll = () => {
-    sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight * 0.8) {
-            section.style.opacity = 1;
-            section.style.transform = "translateY(0)";
-        }
-    });
-};
-
-// Run on page load and scroll
-window.addEventListener('load', sectionVisibilityOnScroll);
-window.addEventListener('scroll', sectionVisibilityOnScroll);
