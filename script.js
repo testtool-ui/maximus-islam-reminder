@@ -1,4 +1,4 @@
-// Random Reminder Logic with Loading Icon
+// Random Reminder Logic with Loading Text
 const reminders = [
     "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
     "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
@@ -8,22 +8,22 @@ const reminders = [
 ];
 
 const reminderText = document.getElementById("reminder-text");
+const loadingText = document.getElementById("loading-text");
 const button = document.getElementById("new-reminder-btn");
-const loadingSpinner = document.getElementById("loading-spinner");
 
 // When the button is clicked
 button.addEventListener("click", function() {
-    // Hide the current reminder text and show the loading spinner
+    // Hide the current reminder text and show the loading text
     reminderText.style.display = "none";  // Hide reminder
-    loadingSpinner.style.display = "inline-block";  // Show loading spinner
+    loadingText.style.display = "block";  // Show loading text
 
     // Simulate fetching new reminder after 1.5 seconds
     setTimeout(function() {
         const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
         reminderText.textContent = randomReminder;
 
-        // Hide the loading spinner and display the new reminder
-        loadingSpinner.style.display = "none";  // Hide spinner
+        // Hide the loading text and display the new reminder
+        loadingText.style.display = "none";  // Hide loading text
         reminderText.style.display = "block";  // Show new reminder
     }, 1500);  // Simulated loading delay
 });
