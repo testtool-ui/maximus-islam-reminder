@@ -43,16 +43,16 @@ const reminderText = document.getElementById("reminder-text");
 const button = document.getElementById("new-reminder-btn");
 const loadingSpinner = document.getElementById("loading-spinner");
 
-button.addEventListener("click", function () {
+button.addEventListener("click", function() {
     // Show the loading spinner
-    loadingSpinner.style.display = "block";
+    loadingSpinner.style.display = "inline-block";
 
-    // Simulate a delay to fetch the reminder (for demonstration)
-    setTimeout(function () {
+    // Simulate loading time (you can adjust this as needed)
+    setTimeout(function() {
         const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
         reminderText.textContent = randomReminder;
 
         // Hide the loading spinner after the reminder is updated
         loadingSpinner.style.display = "none";
-    }, 1000);  // Simulating a 1-second fetch delay
+    }, 1000); // You can adjust the timeout duration as needed (currently set to 1 second)
 });
