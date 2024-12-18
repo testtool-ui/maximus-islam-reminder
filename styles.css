@@ -33,18 +33,16 @@ body {
     font-style: italic;
 }
 
-.hero-image {
+.maximus-image {
     width: 100%;
-    max-width: 1200px;
+    max-width: 600px;
     height: auto;
-    border-radius: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 30px;
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 2s;
 }
 
-/* Button Styles */
+/* Buttons */
 .btn {
     background-color: #3e8064;
     color: white;
@@ -57,8 +55,6 @@ body {
 
 .btn:hover {
     background-color: #2d5b44;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Reminder Section */
@@ -66,83 +62,46 @@ body {
     background-color: white;
     padding: 60px 20px;
     text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Scroll Animations */
+#reminder h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #2d5b44;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+#reminder p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Loading Spinner */
+#loading-spinner {
+    font-size: 1.5rem;
+    color: #2d5b44;
+    font-weight: bold;
+    margin: 20px;
+    display: none;
+}
+
+/* Section Animations */
 .section-animate {
     opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 1s forwards;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
 }
 
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    body {
-        padding: 0;
-    }
-
-    #hero h1 {
-        font-size: 1.8rem;
-    }
-
-    #hero p {
-        font-size: 1rem;
-    }
-
-    .btn {
-        padding: 12px 25px;
-    }
-
-    #reminder h2,
-    #quranic-reflection h2,
-    #prophet-example h2 {
-        font-size: 1.5rem;
-    }
-
-    #reminder p,
-    #quranic-reflection p,
-    #prophet-example p {
-        font-size: 1rem;
-    }
-
-    footer p {
-        font-size: 1rem;
-    }
-
-    #quranic-reflection .verse {
-        padding: 15px;
-    }
-
-    #prophet-example p {
-        font-size: 1rem;
-    }
-}
-
-/* Footer Hover Effect */
-footer p:hover {
-    color: #ffcc00; /* Highlight color on hover */
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-/* Hero Section Fade-in Animation */
-#hero h1, #hero p {
-    opacity: 0;
-    animation: fadeIn 2s forwards;
-    animation-delay: 1s;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
+.section-animate.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Scroll-to-Top Button Styles */
@@ -163,22 +122,3 @@ footer p:hover {
 #scroll-to-top-btn:hover {
     background-color: #234f37;
 }
-
-/* Testimonial Section */
-#testimonials {
-    background-color: #f4f4f4;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#testimonials .testimonial {
-    margin: 20px;
-    padding: 20px;
-    border-left: 5px solid #2d5b44;
-    font-style: italic;
-}
-
-#testimonials blockquote {
-    font-size: 1.2rem;
-    color: #333;
-    }
