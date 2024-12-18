@@ -1,4 +1,4 @@
-// Random Reminder Logic with Loading Text
+// Random Reminder Logic
 const reminders = [
     "Patience is key in every trial, and the reward for patience is beyond measure. Trust in Allah’s plan.",
     "Even when things seem impossible, remember that Allah has a plan for you. Keep faith, and keep striving.",
@@ -11,21 +11,21 @@ const reminderText = document.getElementById("reminder-text");
 const loadingText = document.getElementById("loading-text");
 const button = document.getElementById("new-reminder-btn");
 
-// When the button is clicked
+// Event listener for button click
 button.addEventListener("click", function() {
-    // Hide the current reminder text and show the loading text
-    reminderText.style.display = "none";  // Hide reminder
-    loadingText.style.display = "block";  // Show loading text
+    // Hide reminder text and show loading text
+    reminderText.style.display = 'none';
+    loadingText.style.display = 'block';
 
-    // Simulate fetching new reminder after 1.5 seconds
+    // Simulate loading for 2 seconds (replace with actual API call or logic)
     setTimeout(function() {
         const randomReminder = reminders[Math.floor(Math.random() * reminders.length)];
         reminderText.textContent = randomReminder;
-
-        // Hide the loading text and display the new reminder
-        loadingText.style.display = "none";  // Hide loading text
-        reminderText.style.display = "block";  // Show new reminder
-    }, 1500);  // Simulated loading delay
+        
+        // Hide loading text and show reminder text
+        loadingText.style.display = 'none';
+        reminderText.style.display = 'block';
+    }, 2000); // Simulate a 2-second delay for loading
 });
 
 // Smooth scrolling for the "Reflect on the Lessons" button
